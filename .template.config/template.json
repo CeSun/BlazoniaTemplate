@@ -1,0 +1,25 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "CeSun",
+    "classifications": ["Blazonia", "Blazor", "Avalonia"],
+    "name": "Blazonia Cross Project",
+    "identity": "BlazoniaTemplate",
+    "shortName": "blazonia",
+    "tags": {
+      "language": "C#",
+      "type": "project"
+    },
+    "sourceName": "BlazoniaTemplate",
+    "preferNameDirectory": true,
+    "sources": [
+      {
+        "exclude": [
+          "**/.github/**",
+          "**/.git**",
+          "**/.template.config/**",
+          "**/LICENSE.txt",
+          "**/README.md"
+        ]
+      }
+    ]
+  }
