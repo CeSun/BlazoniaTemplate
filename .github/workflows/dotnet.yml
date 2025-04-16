@@ -20,6 +20,7 @@ jobs:
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: '8.0.x'
+    - uses: nuget/setup-nuget@v2
     - name: Pack Blazonia nugets
       run: nuget pack ./BlazoniaTemplate.nuspec -OutputDirectory ./packages -Version 0.0.0-alpha.${{github.run_number}}
     - name: Upload a Build Artifact
