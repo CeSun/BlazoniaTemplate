@@ -21,7 +21,7 @@ jobs:
       with:
         dotnet-version: '8.0.x'
     - name: download nuget cli
-      run: apt -y install nuget
+      run: sudo apt -y install nuget
     - name: Pack Blazonia nugets
       run: nuget pack ./BlazoniaTemplate.nuspec -OutputDirectory ./packages -Version 0.0.0-alpha.${{github.run_number}}
     - name: Upload a Build Artifact
