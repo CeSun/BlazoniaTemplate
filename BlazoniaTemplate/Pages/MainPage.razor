@@ -7,7 +7,7 @@
     <Border Theme="@("CardBorder")">
         <StackPanel HorizontalAlignment="HorizontalAlignment.Center">
             <CheckBox @bind-IsChecked="_showCounterArea">是否显示Counter</CheckBox>
-            @if (_showCounterArea != null && _showCounterArea == true)
+            @if (_showCounterArea is true)
             {
                 <TextBlock>Counter: @_counter</TextBlock>
                 <Button OnClick="OnButtonClick">增加</Button>
@@ -17,7 +17,9 @@
 </Shell>
 
 @code {
+    
     bool? _showCounterArea = true;
+
     int _counter = 0;
     
     public void OnButtonClick()
