@@ -10,6 +10,6 @@
     </packageTypes>
   </metadata>
     <files>
-    <file src=".\**" target="BlazoniaTemplate" exclude="**\bin\**;**\obj\**;.\.vs\**;**\BlazoniaTemplate.*.csproj.user;.\BlazoniaTemplate.nuspec;.github/**" />
+    <file src=".\**" target="BlazoniaTemplate" exclude="**\.idea\**;**\.github\**;**\.git\**;**\bin\**;**\obj\**;.\.vs\**;**\BlazoniaTemplate.sln.DotSettings.user;**\BlazoniaTemplate.*.csproj.user;.\BlazoniaTemplate.nuspec;.github/**" />
   </files>
 </package>

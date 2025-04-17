@@ -6,20 +6,21 @@
     "identity": "BlazoniaTemplate",
     "shortName": "blazonia",
     "tags": {
-      "language": "C#",
-      "type": "project"
+        "language": "C#",
+        "type": "solution",
+        "editorTreatAs": "solution"
     },
     "sourceName": "BlazoniaTemplate",
     "preferNameDirectory": true,
     "sources": [
-      {
-        "exclude": [
-          "**/.github/**",
-          "**/.git**",
-          "**/.template.config/**",
-          "**/LICENSE.txt",
-          "**/README.md"
-        ]
-      }
+        {
+            "exclude": [
+                "**/.github/**",
+                "**/.git**",
+                "**/.template.config/**",
+                "**/LICENSE.txt",
+                "**/README.md"
+            ]
+        }
     ]
-  }
+}
