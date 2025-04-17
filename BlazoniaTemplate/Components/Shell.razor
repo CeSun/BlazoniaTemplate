@@ -1,0 +1,40 @@
+﻿@using Avalonia.Controls.ApplicationLifetimes
+@using OneOf
+@if (global::Avalonia.Application.Current?.ApplicationLifetime is IClassicDesktopStyleApplicationLifetime lifetime)
+{
+    <Window Title="@Title" Height="@Height" Width="@Width" Background="@Background" Icon="Icon">
+        @if (ChildContent != null)
+        {
+            @ChildContent
+        }
+    </Window>
+}
+else
+{
+    <Panel Background="@Background">
+        @if (ChildContent != null)
+        {
+            @ChildContent
+        }
+    </Panel>
+}
+
+@code {
+    [Parameter] 
+    public RenderFragment? ChildContent { get; set; }
+    
+    [Parameter]
+    public string? Title { get; set; }
+    
+    [Parameter]
+    public double? Width { get; set; }
+    
+    [Parameter]
+    public double? Height { get; set; }
+    
+    [Parameter]
+    public OneOf<AM.IBrush, AM.Color, string> Background { get; set; }
+
+    [Parameter] 
+    public OneOf<AC.WindowIcon, string> Icon { get; set; }
+}

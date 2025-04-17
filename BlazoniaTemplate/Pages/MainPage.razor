@@ -1,17 +1,28 @@
 ﻿@using Avalonia.Platform
 @using Application = Avalonia.Application
+@using BlazoniaTemplate.Components
 
 
-<Window Height="400" Width="600" Title="BlazoniaTemplate" Background="@("#F6F6F6")" Icon="@("avares://BlazoniaTemplate/Assets/avalonia-logo.ico")">
-    <StackPanel>
-        <Button>你好222</Button>
-    </StackPanel>
-</Window>
+<Shell Height="400" Width="600" Title="BlazoniaTemplate" Background="@("#F6F6F6")" Icon="@("avares://BlazoniaTemplate/Assets/avalonia-logo.ico")">
+    <Border Theme="@("CardBorder")">
+        <StackPanel HorizontalAlignment="HorizontalAlignment.Center">
+            <CheckBox @bind-IsChecked="_showCounterArea">是否显示Counter</CheckBox>
+            @if (_showCounterArea != null && _showCounterArea == true)
+            {
+                <TextBlock>Counter: @_counter</TextBlock>
+                <Button OnClick="OnButtonClick">增加</Button>
+            }
+        </StackPanel>
+    </Border>
+</Shell>
 
 @code {
-    protected override void OnInitialized()
+    bool? _showCounterArea = true;
+    int _counter = 0;
+    
+    public void OnButtonClick()
     {
-        
+        _counter++;
     }
-
+    
 }

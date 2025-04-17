@@ -1,4 +1,5 @@
 ﻿using Avalonia;
+using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
 using Blazonia;
 using BlazoniaTemplate.Pages;
@@ -16,7 +17,10 @@ public class App : AppBase
     {
         base.OnFrameworkInitializationCompleted();
 #if DEBUG
-        this.AttachDevTools();
+        if (Current?.ApplicationLifetime is IClassicDesktopStyleApplicationLifetime lifetime)
+        {
+            this.AttachDevTools();
+        }
 #endif
     }
 }
