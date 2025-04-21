@@ -1,0 +1,17 @@
+﻿@page "/SubPage"
+@using Avalonia.Interactivity
+@inject INavigation Navigation;
+
+<StackPanel Background="@("#F6F6F6")">
+    <TextBlock>子页面</TextBlock>
+    <Button OnClick="OnButtonClick">返回</Button>
+</StackPanel>
+
+@code {
+
+    private async Task OnButtonClick(RoutedEventArgs arg)
+    {
+        await Navigation.PopAsync();
+    }
+
+}

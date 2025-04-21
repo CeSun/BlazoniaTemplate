@@ -1,17 +1,18 @@
 ﻿@using Avalonia.Platform
 @using Application = Avalonia.Application
+@using Blazonia.Navigation;
+@inject INavigation Navigation;
 
-
-<Window Height="400" Width="600" Title="BlazoniaTemplate" Background="@("#F6F6F6")" Icon="@("avares://BlazoniaTemplate/Assets/avalonia-logo.ico")">
+<Window Width="600" Height="400" Title="BlazoniaTemplate" Background="@("#F6F6F6")" Icon="@("avares://BlazoniaTemplate/Assets/avalonia-logo.ico")">
     <StackPanel>
-        <Button>你好222</Button>
+        <Button OnClick="OnButtonClick">子页面</Button>
     </StackPanel>
 </Window>
 
 @code {
-    protected override void OnInitialized()
-    {
-        
-    }
 
+    public async Task OnButtonClick()
+    {
+        await Navigation.NavigateToAsync("SubPage");
+    }
 }
